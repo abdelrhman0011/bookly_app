@@ -60,8 +60,8 @@ class _SplachViewBodyState extends State<SplachViewBody>
   }
 
    void navigatetohome() {
-     Future.delayed(Duration(seconds: 1), () {
-      Get.to(() => HomeView(), duration: kTransetionDuration,
+     Future.delayed(Duration(seconds: 2), () {
+      Get.off(() => HomeView(), duration: kTransetionDuration,
       transition: Transition.fadeIn
       
       );
