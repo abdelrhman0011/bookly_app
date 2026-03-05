@@ -11,7 +11,7 @@ class FeatuerdListViewItem extends StatelessWidget {
       child: Container(
         height: 100,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(18),
           image: DecorationImage(image: AssetImage(AssetsPath.book1)),
         ),
       ),
