@@ -4,6 +4,7 @@ import 'package:bookly_app/features/home/presentation/views/home_view.dart';
 import 'package:bookly_app/features/splach/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 class SplachViewBody extends StatefulWidget {
   const SplachViewBody({super.key});
@@ -61,10 +62,8 @@ class _SplachViewBodyState extends State<SplachViewBody>
 
    void navigatetohome() {
      Future.delayed(Duration(seconds: 2), () {
-      Get.off(() => HomeView(), duration: kTransetionDuration,
-      transition: Transition.fadeIn
-      
-      );
+
+      GoRouter.of(context).push('/homeview');
     });
   }
 }
