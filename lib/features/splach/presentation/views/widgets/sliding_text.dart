@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SlidingText extends StatelessWidget {
-  const SlidingText({
-    super.key,
-    required this.slidingtext,
-  });
+  const SlidingText({super.key, required this.slidingtext});
 
   final Animation<Offset> slidingtext;
 

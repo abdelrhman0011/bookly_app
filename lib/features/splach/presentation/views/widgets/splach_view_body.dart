@@ -21,14 +21,12 @@ class _SplachViewBodyState extends State<SplachViewBody>
     navigatetohome();
   }
 
- 
-
-  
   @override
   void dispose() {
-  animationController.dispose();
+    animationController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,14 +34,12 @@ class _SplachViewBodyState extends State<SplachViewBody>
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-           Image.asset(AssetsPath.logopath),
+          Image.asset(AssetsPath.logopath),
           SlidingText(slidingtext: slidingtext),
         ],
       ),
     );
   }
-
-
 
   void initslidinganmation() {
     animationController = AnimationController(
@@ -57,11 +53,9 @@ class _SplachViewBodyState extends State<SplachViewBody>
     animationController.forward();
   }
 
-   void navigatetohome() {
-     Future.delayed(Duration(seconds: 2), () {
-
+  void navigatetohome() {
+    Future.delayed(Duration(seconds: 2), () {
       GoRouter.of(context).push('/homeview');
     });
   }
 }
-

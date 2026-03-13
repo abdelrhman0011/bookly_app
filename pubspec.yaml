@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.8
+  equatable: ^2.0.8
   flutter:
     sdk: flutter
   flutter_svg: ^2.2.3
@@ -67,7 +68,6 @@ flutter:
     - family: GTSectraFine
       fonts:
         - asset: assets/fonts/GTSectraFineRegular.ttf
-        
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

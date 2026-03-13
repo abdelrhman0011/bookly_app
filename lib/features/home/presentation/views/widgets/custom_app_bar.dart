@@ -11,17 +11,15 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-     
+
       children: [
-        Image.asset(
-          AssetsPath.logopath,
-          height: 16,
-          ),
-        IconButton(onPressed: (){
-           GoRouter.of(context).push(AppRouters.searchview);
-        }, icon: Icon(FontAwesomeIcons.magnifyingGlass,
-        size: 16,
-        ))
+        Image.asset(AssetsPath.logopath, height: 16),
+        IconButton(
+          onPressed: () {
+            GoRouter.of(context).push(AppRouters.searchview);
+          },
+          icon: Icon(FontAwesomeIcons.magnifyingGlass, size: 16),
+        ),
       ],
     );
   }
