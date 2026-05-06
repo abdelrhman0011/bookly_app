@@ -14,7 +14,9 @@ class BooksDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.27),
-          child: FeatuerdListViewItem(),
+          child: FeatuerdListViewItem(
+            imageUrl: "https://i.ytimg.com/vi/Y7H59li_t_Q/hq720.jpg",
+          ),
         ),
         SizedBox(height: 43),
         Text(
