@@ -1,12 +1,15 @@
 import 'package:bookly_app/core/utils/app_routers.dart';
 import 'package:bookly_app/core/utils/assets_path.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/data/models/books_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/views/widgets/book_rate.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+  const BestSellerListViewItem({super.key, required this.book});
+  final BookModel book;
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +23,7 @@ class BestSellerListViewItem extends StatelessWidget {
           children: [
             AspectRatio(
               aspectRatio: 2.7 / 4,
-              child: Container(
-                height: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(image: AssetImage(AssetsPath.book1)),
-                ),
-              ),
+              child: CachedNetworkImage(imageUrl: book.volumeInfo.imageLinks.thumbnail)
             ),
             SizedBox(width: 20),
             Expanded(
@@ -36,28 +33,30 @@ class BestSellerListViewItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .5,
                     child: Text(
-                      "Harry Potter and the Goblet of Fire",
-                      maxLines: 2,
+                      book.volumeInfo.title!,
+                      maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.textstyle20,
                     ),
                   ),
                   SizedBox(height: 3),
                   Text(
-                    "J.K. Rowling",
+                    book.volumeInfo.authors?.first ?? "Unknown Author",
                     style: Styles.textstyle14.copyWith(color: Colors.grey),
                   ),
                   SizedBox(height: 3),
                   Row(
                     children: [
                       Text(
-                        "19.99\$",
+                        "free",
                         style: Styles.textstyle20.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       SizedBox(width: 37),
-                      BookRating(),
+                      BookRating(
+                        
+                      ),
                     ],
                   ),
                 ],
